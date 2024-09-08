@@ -1,0 +1,139 @@
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SW2
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/2
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/3
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/4
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/5
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/6
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/7
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/8
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/9
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/10
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/11
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/12
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/13
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/14
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/15
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/16
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/17
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/18
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/19
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/20
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/21
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/22
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/23
+ no lldp receive
+ no lldp transmit
+!
+interface FastEthernet0/24
+ no lldp receive
+ no lldp transmit
+!
+interface GigabitEthernet0/1
+ no lldp receive
+ no lldp transmit
+!
+interface GigabitEthernet0/2
+ no lldp receive
+ no lldp transmit
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+!
+!
+!
+line con 0
+!
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+
