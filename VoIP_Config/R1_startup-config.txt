@@ -1,0 +1,126 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R1
+!
+!
+!
+!
+ip dhcp excluded-address 192.168.10.1 192.168.10.5
+ip dhcp excluded-address 192.168.20.1 192.168.10.5
+!
+ip dhcp pool DATA10
+ network 192.168.10.0 255.255.255.224
+ default-router 192.168.10.1
+ip dhcp pool VOICE20
+ network 192.168.20.0 255.255.255.224
+ default-router 192.168.20.1
+ option 150 ip 192.168.20.1
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX10176YDH-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.224
+!
+interface FastEthernet0/1.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.224
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+telephony-service
+ max-ephones 3
+ max-dn 3
+ ip source-address 192.168.20.1 port 2000
+ auto assign 1 to 3
+!
+ephone-dn 1
+ number 1010
+!
+ephone-dn 2
+ number 2020
+!
+ephone-dn 3
+ number 3030
+!
+ephone 1
+ device-security-mode none
+ mac-address 0060.5CEE.02B3
+ type 7960
+ button 1:1
+!
+ephone 2
+ device-security-mode none
+ mac-address 000A.41DE.32EA
+ type 7960
+ button 1:2
+!
+ephone 3
+ device-security-mode none
+ mac-address 0002.4A45.7DE9
+ type 7960
+ button 1:3
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
